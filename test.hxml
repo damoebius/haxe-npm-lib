@@ -1,0 +1,5 @@
+-cp src 
+-js test/test.js
+-main Test
+--dead-code-elimination
+--js-modern
