@@ -1,5 +1,8 @@
--cp src 
--js test/test.js
--main Test
---dead-code-elimination
---js-modern
+# JavaScript
+-main TestMain
+-lib munit
+-lib hamcrest
+-cp src
+
+-cp test
+-js test-build/js_test.js

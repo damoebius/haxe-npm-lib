@@ -1,3 +1,7 @@
 # Editor files
 *.sublime-*
 TODO
+
+# Compiled files
+test-build/
+test-report/
