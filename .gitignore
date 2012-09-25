@@ -2,6 +2,7 @@
 *.sublime-*
 TODO
 
-# Compiled files
+# MLib / MUnit files
 test-build/
 test-report/
+package/
