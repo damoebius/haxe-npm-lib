@@ -1,0 +1,8 @@
+<project name="beanhx" url="" license="MIT">
+	<user name="jason"/>
+	<tag v="js" />
+	<tag v="events" />
+	<tag v="dom" />
+	<description>Externs to the BeanJS lightweight event library for Javascript.</description>
+	<version name="0.9"></version>
+</project>
