@@ -1,8 +1,8 @@
-<project name="beanhx" url="" license="MIT">
+<project name="beanhx" url="" license="">
 	<user name="jason"/>
 	<tag v="js" />
 	<tag v="events" />
 	<tag v="dom" />
 	<description>Externs to the BeanJS lightweight event library for Javascript.</description>
-	<version name="0.9.0.0"></version>
+	<version name="0.9.1.0">Removed 'Test' class</version>
 </project>
