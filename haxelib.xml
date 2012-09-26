@@ -1,4 +1,4 @@
-<project name="beanhx" url="" license="">
+<project name="beanhx" url="" license="MIT">
 	<user name="jason"/>
 	<tag v="js" />
 	<tag v="events" />
