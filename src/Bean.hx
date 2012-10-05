@@ -7,14 +7,14 @@
 * Externs by Jason O'Neil 2012.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
 ****/
 
-typedef Node = js.Dom.HtmlDom;
+typedef BeanNode = js.Dom.HtmlDom;
 
 extern class Event {
 	
 	public var type (default,never) : String;
-	public var target (default,never) : Node;
-	public var currentTarget (default,never) : Node;
-	public var relatedTarget (default,never) : Node;
+	public var target (default,never) : BeanNode;
+	public var currentTarget (default,never) : BeanNode;
+	public var relatedTarget (default,never) : BeanNode;
 	public var eventPhase (default,never) : Int;
 	public var bubbles (default,never) : Bool;
 	public var cancelable (default,never) : Bool;
@@ -27,7 +27,7 @@ extern class Event {
 	public var which (default,never) : Int;
 	public var detail (default,never) : Int;
 	public var isTrusted (default,never) : Bool;
-	public var relatedNode (default,never) : Node;
+	public var relatedNode (default,never) : BeanNode;
 	public var attrName (default,never) : String;
 	public var attrChange (default,never) : Int;
 	public function getModifierState(keyIdentifierArg:String) : Bool;
@@ -101,28 +101,28 @@ extern class StateEvent extends Event
 
 @:native("bean")
 extern class Bean {
-	@:overload(function(element:Node, eventType:String, handler:Event->Void):Void{})
-	@:overload(function(element:Node, eventType:String, selector:String, handler:Event->Void):Void{})
-	@:overload(function(element:Node, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
-	static function on(element:Node, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:Event->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
+	static function on(element:BeanNode, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
 	
-	@:overload(function(element:Node, eventType:String, handler:Event->Void):Void{})
-	@:overload(function(element:Node, eventType:String, selector:String, handler:Event->Void):Void{})
-	@:overload(function(element:Node, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
-	static function one(element:Node, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:Event->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
+	static function one(element:BeanNode, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
 	
-	@:overload(function(element:Node):Void{})
-	@:overload(function(element:Node, eventType:String):Void{})
-	static function off(element:Node, eventType:String, handler:Event->Void):Void;
+	@:overload(function(element:BeanNode):Void{})
+	@:overload(function(element:BeanNode, eventType:String):Void{})
+	static function off(element:BeanNode, eventType:String, handler:Event->Void):Void;
 
-	@:overload(function(destElement:Node, srcElement:Node):Void{})
-	static function clone(destElement:Node, srcElement:Node, eventType:String):Void;
+	@:overload(function(destElement:BeanNode, srcElement:BeanNode):Void{})
+	static function clone(destElement:BeanNode, srcElement:BeanNode, eventType:String):Void;
 
-	@:overload(function(element:Node, eventType:String):Void{})
-	static function fire(element:Node, eventType:String, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String):Void{})
+	static function fire(element:BeanNode, eventType:String, args:Array<Dynamic>):Void;
 
-	@:overload(function(element:Node, eventType:String):Void{})
-	static function setSelectorEngine(element:Node, eventType:String, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String):Void{})
+	static function setSelectorEngine(element:BeanNode, eventType:String, args:Array<Dynamic>):Void;
 
 	// Include the minified JS file.
 	private static function __init__() : Void untyped {
