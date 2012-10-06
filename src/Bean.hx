@@ -7,9 +7,12 @@
 * Externs by Jason O'Neil 2012.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
 ****/
 
-typedef BeanNode = js.Dom.HtmlDom;
+import UserAgent;
+import UserAgentContext;
 
-extern class Event {
+typedef BeanNode = HTMLElement;
+
+extern class BnEvent {
 	
 	public var type (default,never) : String;
 	public var target (default,never) : BeanNode;
@@ -50,7 +53,7 @@ extern class Event {
 	// Bean still has these event properties that we're not catching - they weren't present in FF, not sure what they are
 	/* srcElement propertyName */
 }
-extern class MouseEvent extends Event 
+extern class BMouseEvent extends BnEvent 
 {
 	// Bean has these properties which we're ignoring for now...
 	public var clientX (default,never) : Int;
@@ -63,7 +66,7 @@ extern class MouseEvent extends Event
 	public var buttons (default,never) : Int;
 	/* dataTransfer fromElement offsetX offsetY     toElement */
 }
-extern class MouseWheelEvent extends Event 
+extern class BMouseWheelEvent extends BnEvent 
 {
 	public var wheelDeltaX (default,never) : Int;
 	public var wheelDeltaY (default,never) : Int;
@@ -72,28 +75,28 @@ extern class MouseWheelEvent extends Event
 	// Bean has these properties which we're ignoring for now...
 	/* axis (axis is FF specific) */
 }
-extern class KeyEvent extends Event 
+extern class BKeyEvent extends BnEvent 
 {
 	public var keyIdentifier (default,never) : String;
 	public var keyLocation (default,never) : Int;
 	// Bean has these properties which we're ignoring for now...
 	/* char charCode key keyCode location */
 }
-extern class TextEvent extends Event 
+extern class BTextEvent extends BnEvent 
 {
 	public var data (default,never) : String;
 }
-extern class TouchEvent extends Event 
+extern class BTouchEvent extends BnEvent 
 {
 	// Bean has these properties which we're ignoring for now...
 	/* touches targetTouches changedTouches scale rotation */
 }
-extern class MessageEvent extends Event 
+extern class BMessageEvent extends BnEvent 
 {
 	// Bean has these properties which we're ignoring for now...
 	/* data origin source */
 }
-extern class StateEvent extends Event 
+extern class BStateEvent extends BnEvent 
 {
 	// Bean has these properties which we're ignoring for now...
 	/* state */
@@ -101,19 +104,19 @@ extern class StateEvent extends Event
 
 @:native("bean")
 extern class Bean {
-	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void):Void{})
-	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:Event->Void):Void{})
-	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
-	static function on(element:BeanNode, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String, handler:BnEvent->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:BnEvent->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, handler:BnEvent->Void, args:Array<Dynamic>):Void{})
+	static function on(element:BeanNode, eventType:String, selector:String, handler:BnEvent->Void, args:Array<Dynamic>):Void;
 	
-	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void):Void{})
-	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:Event->Void):Void{})
-	@:overload(function(element:BeanNode, eventType:String, handler:Event->Void, args:Array<Dynamic>):Void{})
-	static function one(element:BeanNode, eventType:String, selector:String, handler:Event->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:BeanNode, eventType:String, handler:BnEvent->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, selector:String, handler:BnEvent->Void):Void{})
+	@:overload(function(element:BeanNode, eventType:String, handler:BnEvent->Void, args:Array<Dynamic>):Void{})
+	static function one(element:BeanNode, eventType:String, selector:String, handler:BnEvent->Void, args:Array<Dynamic>):Void;
 	
 	@:overload(function(element:BeanNode):Void{})
 	@:overload(function(element:BeanNode, eventType:String):Void{})
-	static function off(element:BeanNode, eventType:String, handler:Event->Void):Void;
+	static function off(element:BeanNode, eventType:String, handler:BnEvent->Void):Void;
 
 	@:overload(function(destElement:BeanNode, srcElement:BeanNode):Void{})
 	static function clone(destElement:BeanNode, srcElement:BeanNode, eventType:String):Void;
