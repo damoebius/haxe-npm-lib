@@ -132,7 +132,7 @@ extern class Bean {
 	private static function __init__() : Void untyped {
 		#if !noEmbedJS
 		if( untyped __js__("typeof(bean) == 'undefined'") )
-			haxe.macro.Tools.includeFile("bean.min.js");
+			haxe.macro.Tools.includeFile("bean.js");
 		#end
 	}
 }
