@@ -7,10 +7,11 @@
 * Externs by Jason O'Neil 2012.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
 ****/
 
+import dtx.DOMNode;
 import UserAgent;
 import UserAgentContext;
 
-typedef BeanNode = HTMLElement;
+typedef BeanNode = DOMNode;
 
 extern class BnEvent {
 	
