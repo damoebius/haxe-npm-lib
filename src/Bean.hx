@@ -131,8 +131,12 @@ extern class Bean {
 	// Include the minified JS file.
 	private static function __init__() : Void untyped {
 		#if !noEmbedJS
-		if( untyped __js__("typeof(bean) == 'undefined'") )
+		if ( untyped __js__("typeof(bean) == 'undefined'") )
+			#if debug
+			haxe.macro.Tools.includeFile("bean.js");
+			#else
 			haxe.macro.Tools.includeFile("bean.min.js");
+			#end
 		#end
 	}
 }
