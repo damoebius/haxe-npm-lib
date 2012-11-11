@@ -129,13 +129,12 @@ extern class Bean {
 	static function setSelectorEngine(element:Node, eventType:String, args:Array<Dynamic>):Void;
 
 	// Include the minified JS file.
-	private static function __init__() : Void untyped {
+	private static function __init__() : Void {
 		#if !noEmbedJS
-		if ( untyped __js__("typeof(bean) == 'undefined'") )
 			#if debug
-			haxe.macro.Tools.includeFile("bean.js");
+				haxe.macro.Tools.includeFile("bean.js");
 			#else
-			haxe.macro.Tools.includeFile("bean.min.js");
+				haxe.macro.Tools.includeFile("bean.min.js");
 			#end
 		#end
 	}
