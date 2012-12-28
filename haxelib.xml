@@ -1,8 +1,8 @@
-<project name="beanhx" url="" license="MIT">
+<project name="beanhx" url="https://github.com/jasononeil/beanhx" license="MIT">
 	<user name="jason"/>
 	<tag v="js" />
 	<tag v="events" />
 	<tag v="dom" />
 	<description>Externs to the BeanJS lightweight event library for Javascript.</description>
-	<version name="0.9.3.0">Small change to the way Bean is imported</version>
+	<version name="0.10.0.0">Split BnEvent and Bean externs into separate files (to help with Dead Code Elimination)</version>
 </project>
