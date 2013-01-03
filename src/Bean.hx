@@ -4,30 +4,38 @@
 * https://github.com/fat/bean
 * MIT license
 * 
-* Externs by Jason O'Neil 2012.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
+* Externs by Jason O'Neil 2013.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
 ****/
 
-#if xirsys_stdjs
-import UserAgentContext;
+#if haxe_211
+	import js.html.Node;
+#elseif xirsys_stdjs
+	import UserAgentContext;
 #else 
-typedef Node = js.Dom.HtmlDom;
+	typedef Node = js.Dom.HtmlDom;
 #end 
+
+#if haxe_211
+	import js.html.EventListener;
+#else 
+	typedef EventListener = BnEvent->Void;
+#end
 
 @:native("bean")
 extern class Bean {
-	@:overload(function(element:Node, eventType:String, handler:BnEvent->Void):Void{})
-	@:overload(function(element:Node, eventType:String, selector:String, handler:BnEvent->Void):Void{})
-	@:overload(function(element:Node, eventType:String, handler:BnEvent->Void, args:Array<Dynamic>):Void{})
-	static function on(element:Node, eventType:String, selector:String, handler:BnEvent->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:Node, eventType:String, handler:EventListener):Void{})
+	@:overload(function(element:Node, eventType:String, selector:String, handler:EventListener):Void{})
+	@:overload(function(element:Node, eventType:String, handler:EventListener, args:Array<Dynamic>):Void{})
+	static function on(element:Node, eventType:String, selector:String, handler:EventListener, args:Array<Dynamic>):Void;
 	
-	@:overload(function(element:Node, eventType:String, handler:BnEvent->Void):Void{})
-	@:overload(function(element:Node, eventType:String, selector:String, handler:BnEvent->Void):Void{})
-	@:overload(function(element:Node, eventType:String, handler:BnEvent->Void, args:Array<Dynamic>):Void{})
-	static function one(element:Node, eventType:String, selector:String, handler:BnEvent->Void, args:Array<Dynamic>):Void;
+	@:overload(function(element:Node, eventType:String, handler:EventListener):Void{})
+	@:overload(function(element:Node, eventType:String, selector:String, handler:EventListener):Void{})
+	@:overload(function(element:Node, eventType:String, handler:EventListener, args:Array<Dynamic>):Void{})
+	static function one(element:Node, eventType:String, selector:String, handler:EventListener, args:Array<Dynamic>):Void;
 	
 	@:overload(function(element:Node):Void{})
 	@:overload(function(element:Node, eventType:String):Void{})
-	static function off(element:Node, eventType:String, handler:BnEvent->Void):Void;
+	static function off(element:Node, eventType:String, handler:EventListener):Void;
 
 	@:overload(function(destElement:Node, srcElement:Node):Void{})
 	static function clone(destElement:Node, srcElement:Node, eventType:String):Void;

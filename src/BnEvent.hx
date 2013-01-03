@@ -1,7 +1,24 @@
-#if xirsys_stdjs
-import UserAgentContext;
+/****
+* ORIGINAL LIBRARY:
+* Bean - copyright (c) Jacob Thornton 2011-2012
+* https://github.com/fat/bean
+* MIT license
+* 
+* Externs by Jason O'Neil 2013.  No further restrictions other than Jacob Thornton's MIT licence on the original source.
+****/
+
+#if haxe_211
+	import js.html.Node;
+#elseif xirsys_stdjs
+	import UserAgentContext;
 #else 
-typedef Node = js.Dom.HtmlDom;
+	typedef Node = js.Dom.HtmlDom;
+#end
+ 
+#if haxe_211
+	import js.html.DOMWindow;
+#else 
+	typedef DOMWindow = js.Dom.Window;
 #end 
 
 extern class BnEvent {
@@ -18,7 +35,7 @@ extern class BnEvent {
 	public var ctrlKey (default,never) : Bool;
 	public var altKey (default,never) : Bool;
 	public var metaKey (default,never) : Bool;
-	public var view (default,never) : js.Dom.Window;
+	public var view (default,never) : DOMWindow;
 	public var which (default,never) : Int;
 	public var detail (default,never) : Int;
 	public var isTrusted (default,never) : Bool;
