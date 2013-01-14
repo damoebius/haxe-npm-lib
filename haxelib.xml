@@ -4,5 +4,5 @@
 	<tag v="events" />
 	<tag v="dom" />
 	<description>Externs to the BeanJS lightweight event library for Javascript.</description>
-	<version name="0.10.3.0">Fix for extern importing with latest Haxe3 SVN</version>
+	<version name="0.10.4.0">Further fix for Haxe3 SVN compiler inclusion</version>
 </project>
