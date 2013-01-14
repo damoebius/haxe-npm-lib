@@ -52,9 +52,9 @@ extern class Bean {
 		#if haxe_211
 			#if embed_js
 				#if debug
-					untyped haxe.macro.Compiler.includeFile("bean.js");
+					haxe.macro.Compiler.includeFile("bean.js");
 				#else
-					untyped haxe.macro.Compiler.includeFile("bean.min.js");
+					haxe.macro.Compiler.includeFile("bean.min.js");
 				#end
 			#end
 		#else
