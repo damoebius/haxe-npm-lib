@@ -6,3 +6,4 @@ TODO
 test-build/
 test-report/
 package/
+test/*.js

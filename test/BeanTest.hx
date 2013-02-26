@@ -4,7 +4,8 @@ import massive.munit.util.Timer;
 import massive.munit.Assert;
 import massive.munit.async.AsyncFactory;
 import js.JQuery;
-import js.Dom.HtmlDom;
+
+import js.html.*;
 import Bean;
 
 class BeanTest 
@@ -18,9 +19,9 @@ class BeanTest
 
 	var container:JQuery;
 	var btn:JQuery;
-	var btnNode:HtmlDom;
+	var btnNode:Node;
 	var input:JQuery;
-	var inputNode:HtmlDom;
+	var inputNode:Node;
 	static var longTimeOut = 5 * 60 * 1000; // 5 minutes
 	static var btnPosition = "left";
 	static var eventCount = 0;
@@ -30,7 +31,7 @@ class BeanTest
 	public function beforeClass():Void
 	{
 		// Set up a container in the main body, it will hide the results
-		var body = new JQuery(js.Lib.document.body);
+		var body = new JQuery(js.Browser.document.body);
 		container = new JQuery("<div />").css({
 			position: 'absolute',
 			left: 0,

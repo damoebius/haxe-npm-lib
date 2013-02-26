@@ -3,6 +3,7 @@
 -lib munit
 -lib hamcrest
 -cp src
+-D embed_js
 
 -cp test
 -js test-build/js_test.js

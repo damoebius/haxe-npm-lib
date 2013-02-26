@@ -7,7 +7,7 @@
   if (typeof module != 'undefined' && module.exports) module.exports = definition(name, context);
   else if (typeof define == 'function' && typeof define.amd  == 'object') define(definition);
   else context[name] = definition(name, context);
-}('bean', this, function (name, context) {
+}('bean', window, function (name, context) {
   var win            = window
     , old            = context[name]
     , namespaceRegex = /[^\.]*(?=\..*)\.|.*/

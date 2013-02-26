@@ -1,0 +1,6 @@
+-main SimpleExample
+-cp src
+-cp test
+-D embed_js
+
+-js test/SimpleExample.js
