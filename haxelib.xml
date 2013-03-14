@@ -1,8 +1,8 @@
-<project name="beanhx" url="https://github.com/jasononeil/beanhx" license="MIT">
+<project name="beanhx" url="https://github.com/jasononeil/beanhx" license="">
 	<user name="jason"/>
 	<tag v="js" />
 	<tag v="events" />
 	<tag v="dom" />
 	<description>Externs to the BeanJS lightweight event library for Javascript.</description>
-	<version name="0.11.0.0">Version bump for Haxe3 compatibility.  Probably broken compatibility with Haxe2.</version>
+	<version name="0.11.1.0">Added Bean.off(node,handler) syntax</version>
 </project>
