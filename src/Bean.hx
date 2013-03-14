@@ -31,6 +31,7 @@ extern class Bean {
 	
 	@:overload(function(element:Node):Void{})
 	@:overload(function(element:Node, eventType:String):Void{})
+	@:overload(function(element:Node, handler:EventListener):Void{})
 	static function off(element:Node, eventType:String, handler:EventListener):Void;
 
 	@:overload(function(destElement:Node, srcElement:Node):Void{})
