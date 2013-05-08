@@ -1,6 +1,6 @@
 {
   "name": "beanhx",
-  "license": "",
+  "license": "MIT",
   "tags": ["js","events","dom"],
   "description": "Externs to the BeanJS lightweight event library for Javascript.",
   "contributors": ["jason"],
