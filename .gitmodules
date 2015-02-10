@@ -1,0 +1,27 @@
+[submodule "libs/beanhx"]
+	path = libs/beanhx
+	url = https://github.com/jasononeil/beanhx.git
+[submodule "libs/createjs"]
+	path = libs/createjs
+	url = https://github.com/nickalie/CreateJS-Haxe.git
+[submodule "libs/extjs"]
+	path = libs/extjs
+	url = https://github.com/jasononeil/Ext-JS-4.0-externs-for-Haxe.git
+[submodule "libs/nodejs"]
+	path = libs/nodejs
+	url = https://github.com/haxorplatform/nodehx.git
+[submodule "libs/phantomjs"]
+	path = libs/phantomjs
+	url = https://github.com/jdonaldson/phantomjs-hx
+[submodule "libs/phaser"]
+	path = libs/phaser
+	url = https://github.com/Blank101/haxe-phaser.git
+[submodule "libs/pixijs"]
+	path = libs/pixijs
+	url = https://github.com/regniraj/pixi.js-haxe-extern.git
+[submodule "libs/threejs"]
+	path = libs/threejs
+	url = https://github.com/labe-me/haxe-three.js.git
+[submodule "libs/taminahx"]
+	path = libs/taminahx
+	url = https://github.com/damoebius/taminahx.git
