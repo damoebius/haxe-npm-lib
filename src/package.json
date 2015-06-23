@@ -1,0 +1,26 @@
+{
+  "name": "#project.name#",
+  "description": "#project.description#",
+  "keywords": [
+    "javascript",
+    "language",
+    "haxe",
+    "compiler"
+  ],
+  "author": "#project.author#",
+  "version": "#project.version#",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "",
+  "preferGlobal": false,
+  "homepage": "http://haxe.org",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/damoebius/haxe-npm-lib.git"
+  },
+  "dependencies": {
+
+  }
+}

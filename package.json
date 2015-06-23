@@ -1,0 +1,29 @@
+{
+  "name": "haxelib",
+  "description": "Externs and Librairies for haxe",
+  "keywords": [
+    "javascript",
+    "language",
+    "haxe",
+    "compiler"
+  ],
+  "author": "David Mouton",
+  "version": "0.1.1",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "",
+  "preferGlobal": false,
+  "homepage": "http://haxe.org",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/damoebius/haxe-npm-lib.git"
+  },
+  "dependencies": {
+    "ncp": ">=1.0.1",
+    "express": "3.x",
+    "msignal": ">=1.2.3",
+    "haxe": ">=0.320.2"
+  }
+}
