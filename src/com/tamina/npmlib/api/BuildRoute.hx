@@ -1,4 +1,4 @@
-package com.tamina.npmlib.routes;
+package com.tamina.npmlib.api;
 
 import nodejs.Console;
 import nodejs.express.ExpressResponse;
@@ -12,6 +12,7 @@ class BuildRoute extends Route {
     }
 
     private function _sucessHandler( request:ExpressRequest, response:ExpressResponse ):Void {
-         Console.error('not yet implemented');
+        Console.error('not yet implemented');
+        response.send('not yet implemented');
     }
 }

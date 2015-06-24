@@ -1,4 +1,4 @@
-package com.tamina.npmlib.routes;
+package com.tamina.npmlib.api;
 import nodejs.express.ExpressResponse;
 import nodejs.express.ExpressRequest;
 class Route {
