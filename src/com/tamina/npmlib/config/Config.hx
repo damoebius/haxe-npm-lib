@@ -1,9 +1,13 @@
 package com.tamina.npmlib.config;
-import com.tamina.npmlib.io.JsonFile;
+import com.tamina.npmlib.io.FileExtra;
+import com.tamina.npmlib.model.HaxeLib;
+
 class Config {
 
-    public var rootPath:String;
-    public var appPort:Int;
+    public var libsPath:String;
+    public var packagesPath:String;
+    public var version:String;
+    public var libs:Array<HaxeLib>;
 
     private static var _instance:Config;
 
@@ -13,8 +17,7 @@ class Config {
 
     public static function getInstance():Config{
         if(_instance == null){
-            var loader = JsonFile.GetModule();
-            _instance = cast loader.readFileSync('config.json');
+            _instance = FileExtra.readJsonSync('config.json');
         }
         return _instance;
     }

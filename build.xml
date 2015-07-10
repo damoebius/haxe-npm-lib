@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sakurahx" default="deploy-dev">
+
+	<property file="build.properties"/>
+
+	<target name="clean">
+		<delete dir="${output}"/>
+	</target>
+
+	<target name="compile-editor">
+		<mkdir dir="${output.js}"/>
+
+		<exec executable="node" dir="${basedir" failonerror="true">
+            <arg line="node_modules/haxe/bin/haxe-cli.js"/>
+            <arg line="-cp src -js ${output.js}/npmlib.js -main NpmLib"/>
+            <arg line="-lib msignal"/>
+		</exec>
+	</target>
+
+
+	<target name="copy-static-resources">
+		<copy todir="${output}">
+			<fileset dir="assets">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build" depends="clean, copy-static-resources, compile-editor"/>
+
+
+</project>

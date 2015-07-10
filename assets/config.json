@@ -1,0 +1,30 @@
+{
+  "libsPath": "libs/",
+  "packagesPath": "packages/",
+  "version": "0.0.2",
+  "libs": [
+    {
+      "name": "taminahx",
+      "git": "https://github.com/damoebius/taminahx.git",
+      "npm": {
+        "name": "taminahx",
+        "description": "tamina library for haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "David Mouton",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/damoebius/taminahx.git"
+        }
+      }
+    }
+  ]
+}

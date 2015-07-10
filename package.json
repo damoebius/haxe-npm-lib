@@ -21,10 +21,9 @@
     "url": "git://github.com/damoebius/haxe-npm-lib.git"
   },
   "dependencies": {
-    "ncp": ">=1.0.1",
-    "express": "3.x",
     "msignal": ">=1.2.3",
-    "jsonfile":"2.x",
+    "fs-extra":"0.22.x",
+    "npm":"2.13.x",
     "haxe": ">=0.320.2"
   }
 }
