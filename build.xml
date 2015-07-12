@@ -10,7 +10,7 @@
 	<target name="compile-editor">
 		<mkdir dir="${output.js}"/>
 
-		<exec executable="node" dir="${basedir" failonerror="true">
+		<exec executable="node" dir="${basedir}" failonerror="true">
             <arg line="node_modules/haxe/bin/haxe-cli.js"/>
             <arg line="-cp src -js ${output.js}/npmlib.js -main NpmLib"/>
             <arg line="-lib msignal"/>

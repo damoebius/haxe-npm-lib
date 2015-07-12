@@ -91,6 +91,7 @@ class LibBuilder {
             if (error.code == "E404") {
                 Console.info('New package on NPM');
                 _publish = true;
+                _lib.npm.config = cast {};
                 _lib.npm.config.build = _lib.gitRevision;
                 executeNextStep();
             } else {
@@ -106,6 +107,7 @@ class LibBuilder {
                     if (npmObj.config == null || npmObj.config.build == null || npmObj.config.build != _lib.gitRevision) {
                         Console.info('New version');
                         _publish = true;
+                        _lib.npm.config = cast {};
                         _lib.npm.config.build = _lib.gitRevision;
                     } else {
                         Console.info('no changes');

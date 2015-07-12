@@ -25,6 +25,213 @@
           "url": "https://github.com/damoebius/taminahx.git"
         }
       }
+    },
+    {
+      "name": "beanhx",
+      "git": "https://github.com/jasononeil/beanhx.git",
+      "npm": {
+        "name": "beanhx",
+        "description": "Bean.js externs for Haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/beanhx.git"
+        }
+      }
+    },
+    {
+      "name": "CreateJS",
+      "git": "https://github.com/nickalie/CreateJS-Haxe.git",
+      "npm": {
+        "name": "hxcreatejs",
+        "description": "Externs for CreateJS libraries: EaselJS, TweenJS, SoundJS, PreloadJS.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Nikolay Glushchenko",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nickalie/CreateJS-Haxe.git"
+        }
+      }
+    },
+    {
+      "name": "ExtJs",
+      "git": "https://github.com/jasononeil/Ext-JS-4.0-externs-for-Haxe.git",
+      "npm": {
+        "name": "hxextjs",
+        "description": "Ext JS 4.0 Externs for haXe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/Ext-JS-4.0-externs-for-Haxe.git"
+        }
+      }
+    },
+    {
+      "name": "NodeJs",
+      "git": "https://github.com/HaxeFoundation/hxnodejs.git",
+      "npm": {
+        "name": "hxnodejs",
+        "description": "Extern type definitions for Node.JS version 0.12.0 and Haxe 3.2+.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Haxe Foundation",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/HaxeFoundation/hxnodejs.git"
+        }
+      }
+    },
+    {
+      "name": "phantomjs",
+      "git": "https://github.com/jdonaldson/phantomjs-hx.git",
+      "npm": {
+        "name": "hxphantomjs",
+        "description": "hxphantomjs is a haxe extern for phantomjs.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Justin Donaldson",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jdonaldson/phantomjs-hx.git"
+        }
+      }
+    },
+    {
+      "name": "hxphaser",
+      "git": "https://github.com/Blank101/haxe-phaser.git",
+      "npm": {
+        "name": "hxphaser",
+        "description": "Haxe externs for Phaser, the popular JavaScript game engine.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Sam",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/Blank101/haxe-phaser.git"
+        }
+      }
+    },
+    {
+      "name": "pixijs",
+      "git": "https://github.com/pixijs/pixi-haxe.git",
+      "npm": {
+        "name": "hxpixijs",
+        "description": "Externs of Pixi.js (v3) for Haxe - 2D webGL renderer with canvas fallback.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Adi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/pixijs/pixi-haxe.git"
+        }
+      }
+    },
+    {
+      "name": "three.js",
+      "git": "https://github.com/labe-me/haxe-three.js.git",
+      "npm": {
+        "name": "threejs-haxe",
+        "description": "Haxe externs for three.js",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Laurent Bédubourg",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/labe-me/haxe-three.js.git"
+        }
+      }
+    },
+    {
+      "name": "mithril",
+      "git": "https://github.com/ciscoheat/mithril-hx.git",
+      "npm": {
+        "name": "mithril-hx",
+        "description": "Mithril for Haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Andreas",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/ciscoheat/mithril-hx.git"
+        }
+      }
     }
   ]
 }
