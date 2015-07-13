@@ -232,6 +232,29 @@
           "url": "https://github.com/ciscoheat/mithril-hx.git"
         }
       }
+    },
+    {
+      "name": "jQuery",
+      "git": "https://github.com/andyli/jQueryExternForHaxe.git",
+      "npm": {
+        "name": "jquery-hx",
+        "description": "jQuery extern for Haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Andy Li",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/andyli/jQueryExternForHaxe.git"
+        }
+      }
     }
   ]
 }
