@@ -255,6 +255,98 @@
           "url": "https://github.com/andyli/jQueryExternForHaxe.git"
         }
       }
+    },
+    {
+      "name": "tjson",
+      "git": "https://github.com/martamius/TJSON.git",
+      "npm": {
+        "name": "tjson",
+        "description": "The tolerant JSON parser and encoder for HaXe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jordan Wambaugh",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/martamius/TJSON.git"
+        }
+      }
+    },
+    {
+      "name": "actuate",
+      "git": "https://github.com/openfl/actuate.git",
+      "npm": {
+        "name": "actuate",
+        "description": "Actuate is a fast and flexible tween library that uses a jQuery-style chaining syntax.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Joshua Granick",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/openfl/actuate.git"
+        }
+      }
+    },
+    {
+      "name": "spinehx",
+      "git": "https://github.com/nitrobin/spinehx.git",
+      "npm": {
+        "name": "spinehx",
+        "description": "SpineHx is Haxe 3 OpenFL/NME port of spine-libgdx skeletal animation runtime.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Eugene Veretennikov",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nitrobin/spinehx.git"
+        }
+      }
+    },
+    {
+      "name": "awe6",
+      "git": "https://github.com/hypersurge/awe6.git",
+      "npm": {
+        "name": "awe6",
+        "description": "awe6 is game inverted: a scalable, flexible and intuitive framework for the rapid development of quality games.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "hypersurge",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/hypersurge/awe6.git"
+        }
+      }
     }
   ]
 }
