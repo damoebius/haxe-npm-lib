@@ -784,6 +784,27 @@
           "url": "https://gitlab.com/wikiti-random-stuff/roxlib.git"
         }
       }
+    },
+    {
+      "name": "stats.js.hx",
+      "git": "https://github.com/luizbills/stats.js.hx.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "stats.js.hx",
+        "description": "Haxe extern for stats.js",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "luizbills",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/luizbills/stats.js.hx.git"
+        }
+      }
     }
   ]
 }

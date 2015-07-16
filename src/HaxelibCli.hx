@@ -69,7 +69,13 @@ class HaxelibCli {
 
     private function add():Void {
         var command = new AddLibCommand();
+        command.error.add(addHandler);
+        command.complete.add(addHandler);
         command.run();
+    }
+
+    private function addHandler():Void {
+        _process.exit(0);
     }
 
     private function buildHandler(lib:IHaxeLib):Void {
