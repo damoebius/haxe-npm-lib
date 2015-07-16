@@ -1,4 +1,4 @@
-package com.tamina.npmlib.core;
+package com.tamina.npmlib.command;
 import com.tamina.npmlib.nodejs.NPM;
 import com.tamina.npmlib.io.FileExtra;
 import js.Error;
@@ -7,27 +7,27 @@ import com.tamina.npmlib.config.Config;
 import nodejs.Console;
 import nodejs.ChildProcess;
 import nodejs.fs.File;
-import com.tamina.npmlib.model.HaxeLib;
-class LibBuilder {
+import com.tamina.npmlib.model.IHaxeLib;
+class BuildLibCommand {
 
-    public var complete:Signal1<HaxeLib>;
-    public var error:Signal1<HaxeLib>;
+    public var complete:Signal1<IHaxeLib>;
+    public var error:Signal1<IHaxeLib>;
 
     private var _buildStepList:Array<Void -> Void>;
     private var _currentStep:Int = 0;
-    private var _lib:HaxeLib;
+    private var _lib:IHaxeLib;
     private var _config:Config;
     private var _publish:Bool = false;
 
-    public function new(lib:HaxeLib) {
+    public function new(lib:IHaxeLib) {
         this._lib = lib;
         _config = Config.getInstance();
         initStepList();
-        this.complete = new Signal1<HaxeLib>();
-        this.error = new Signal1<HaxeLib>();
+        this.complete = new Signal1<IHaxeLib>();
+        this.error = new Signal1<IHaxeLib>();
     }
 
-    public function build():Void {
+    public function run():Void {
         Console.info("building : " + _lib.name);
         _currentStep = 0;
         _buildStepList[_currentStep]();
@@ -100,7 +100,7 @@ class LibBuilder {
         } else {
             var fields = Reflect.fields(data);
             if (fields.length > 0) {
-                var npmObj:NpmData = Reflect.field(data, fields[0]);
+                var npmObj:INpmData = Reflect.field(data, fields[0]);
                 if (npmObj.version != null) {
                     Console.info('current npm version : ' + npmObj.version);
                     _lib.npm.version = npmObj.version;

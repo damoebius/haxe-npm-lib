@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="sakurahx" default="deploy-dev">
+<project name="haxelibjs">
 
 	<property file="build.properties"/>
 
-	<target name="clean">
-		<delete dir="${output}"/>
-	</target>
 
-	<target name="compile-editor">
+
+	<target name="compile-cli">
 		<mkdir dir="${output.js}"/>
 
 		<exec executable="node" dir="${basedir}" failonerror="true">
             <arg line="node_modules/haxe/bin/haxe-cli.js"/>
-            <arg line="-cp src -js ${output.js}/npmlib.js -main NpmLib"/>
+            <arg line="-cp src -js ${output.js}/haxelib.js -main HaxelibCli"/>
             <arg line="-lib msignal"/>
+            <arg line="-use nodejs"/>
 		</exec>
 	</target>
 
@@ -26,7 +25,7 @@
 		</copy>
 	</target>
 
-	<target name="build" depends="clean, copy-static-resources, compile-editor"/>
+	<target name="build" depends="copy-static-resources, compile-cli"/>
 
 
 </project>

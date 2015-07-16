@@ -1,22 +1,28 @@
 package com.tamina.npmlib.model;
 import Array;
-interface HaxeLib {
+interface IHaxeLib {
     var name:String;
     var git:String;
     var gitRevision:String;
-    var npm:NpmData;
+    var npm:INpmData;
 }
 
-interface NpmData {
+interface INpmData {
     var name:String;
     var description:String;
     var keywords:Array<String>;
     var author:String;
     var version:String;
     var license:String;
-    var config:NpmConfig;
+    var config:INpmConfig;
+    var repository:INpmRepository;
 }
 
-interface NpmConfig{
+interface INpmConfig{
     var build:String;
+}
+
+interface INpmRepository{
+    var type:String;
+    var url:String;
 }

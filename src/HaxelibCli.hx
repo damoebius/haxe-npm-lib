@@ -1,19 +1,22 @@
 package ;
 
+import com.tamina.npmlib.command.AddLibCommand;
+import com.tamina.npmlib.command.BuildLibCommand;
+import com.tamina.npmlib.nodejs.Prompt;
+import com.tamina.npmlib.model.Lib;
 import com.tamina.npmlib.nodejs.NPM;
 import js.Error;
 import com.tamina.npmlib.io.FileExtra;
 import nodejs.fs.File;
-import com.tamina.npmlib.core.LibBuilder;
-import com.tamina.npmlib.model.HaxeLib;
+import com.tamina.npmlib.model.IHaxeLib;
 import nodejs.Console;
 import com.tamina.npmlib.config.ProcessArgument;
 import nodejs.NodeJS;
 import com.tamina.npmlib.config.Config;
 import nodejs.Process;
-class NpmLib {
+class HaxelibCli {
 
-    private static var _server:NpmLib;
+    private static var _instance:HaxelibCli;
 
     private var _process:Process;
     private var _config:Config;
@@ -30,6 +33,8 @@ class NpmLib {
             switch arg {
                 case ProcessArgument.BUILD:
                     this.build();
+                case ProcessArgument.ADD:
+                    this.add();
                 case ProcessArgument.HELP:
                     this.help();
                 default:
@@ -39,7 +44,7 @@ class NpmLib {
     }
 
     public static function main():Void {
-        _server = new NpmLib();
+        _instance = new HaxelibCli();
     }
 
     private function build():Void {
@@ -55,14 +60,19 @@ class NpmLib {
         _buildCompleteNumber = 0;
         for (i in 0..._config.libs.length) {
             var lib = _config.libs[i];
-            var builder = new LibBuilder(lib);
+            var builder = new BuildLibCommand(lib);
             builder.error.add(buildHandler);
             builder.complete.add(buildHandler);
-            builder.build();
+            builder.run();
         }
     }
 
-    private function buildHandler(lib:HaxeLib):Void {
+    private function add():Void {
+        var command = new AddLibCommand();
+        command.run();
+    }
+
+    private function buildHandler(lib:IHaxeLib):Void {
         _buildCompleteNumber++;
         if (_buildCompleteNumber >= _config.libs.length) {
             _process.exit(0);
@@ -75,6 +85,7 @@ class NpmLib {
         Console.info("Usage :");
         Console.info("-? display this message");
         Console.info("-build build all libs to NPM");
+        Console.info("-add a new lib to NPM");
     }
 
 }
