@@ -1,9 +1,9 @@
 package ;
 
+import com.tamina.npmlib.command.UpdateLibsCommand;
+import com.tamina.npmlib.command.HelpCommand;
 import com.tamina.npmlib.command.AddLibCommand;
 import com.tamina.npmlib.command.BuildLibCommand;
-import com.tamina.npmlib.nodejs.Prompt;
-import com.tamina.npmlib.model.Lib;
 import com.tamina.npmlib.nodejs.NPM;
 import js.Error;
 import com.tamina.npmlib.io.FileExtra;
@@ -37,6 +37,8 @@ class HaxelibCli {
                     this.add();
                 case ProcessArgument.HELP:
                     this.help();
+                case ProcessArgument.UPDATE:
+                    this.update();
                 default:
                     Console.warn("Unknown argument : " + arg);
             }
@@ -50,8 +52,8 @@ class HaxelibCli {
     private function build():Void {
         Console.info("start building libs");
         try{
-        if (File.existsSync(_config.packagesPath)) {
-            FileExtra.removeSync(_config.packagesPath);
+        if (File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath)) {
+            FileExtra.removeSync(NodeJS.dirname+'/../'+_config.packagesPath);
         }
         } catch (e:Error){
             Console.error("error while removing packages");
@@ -86,12 +88,13 @@ class HaxelibCli {
     }
 
     private function help():Void {
-        Console.info("Haxe NPM Libs Builder");
-        Console.info("Version : " + _config.version);
-        Console.info("Usage :");
-        Console.info("-? display this message");
-        Console.info("-build build all libs to NPM");
-        Console.info("-add a new lib to NPM");
+        var cmd = new HelpCommand();
+        cmd.run();
+    }
+
+    private function update():Void {
+        var cmd = new UpdateLibsCommand();
+        cmd.run();
     }
 
 }
