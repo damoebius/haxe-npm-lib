@@ -1,4 +1,5 @@
 package com.tamina.npmlib.command;
+import nodejs.NodeJS;
 import msignal.Signal;
 import com.tamina.npmlib.io.FileExtra;
 import com.tamina.npmlib.config.Config;
@@ -33,7 +34,7 @@ class AddLibCommand {
             var a = new Lib(promptResult.name, promptResult.description, promptResult.author, promptResult.git);
             Console.info("Creating lib  " + a.name + '...');
             _config.libs.push(a);
-            FileExtra.writeJsonSync('config.json', _config);
+            FileExtra.writeJsonSync(NodeJS.dirname+'/../config.json', _config);
             this.complete.dispatch();
         }
     }
