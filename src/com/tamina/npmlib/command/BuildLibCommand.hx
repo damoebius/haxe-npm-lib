@@ -48,7 +48,7 @@ class BuildLibCommand {
     private function publish():Void {
         Console.info("publish");
         if (_publish) {
-            ChildProcessTool.exec("npm publish ", {cwd:NodeJS.dirname+'/../'+_config.packagesPath + _lib.name}, publishHandler);
+            ChildProcessTool.exec("npm publish ", {cwd:Config.getPackagePath() + _lib.name}, publishHandler);
         } else {
             executeNextStep();
         }
@@ -66,7 +66,7 @@ class BuildLibCommand {
 
     private function getLibRevision():Void {
         Console.info("retrieving git revision");
-        ChildProcessTool.exec("git rev-parse --short HEAD ", {cwd:NodeJS.dirname+'/../'+_config.libsPath + _lib.name}, getLibRevisionHandler);
+        ChildProcessTool.exec("git rev-parse --short HEAD ", {cwd:Config.getLibsPath() + _lib.name}, getLibRevisionHandler);
     }
 
 
@@ -132,25 +132,25 @@ class BuildLibCommand {
             versionNumbers[2] = cast (Std.parseInt(versionNumbers[2]) + 1);
             _lib.npm.version = versionNumbers.join('.');
         }
-        FileExtra.writeJsonSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name + '/package.json', _lib.npm);
+        FileExtra.writeJsonSync(Config.getPackagePath() + _lib.name + '/package.json', _lib.npm);
         executeNextStep();
     }
 
     private function packageLib():Void {
         Console.info("Packaging. " + _lib.name);
-        if (!File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath)) {
-            File.mkdirSync(NodeJS.dirname+'/../'+_config.packagesPath, "0777");
+        if (!File.existsSync(Config.getPackagePath())) {
+            File.mkdirSync(Config.getPackagePath(), "0777");
         }
-        if (!File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name)) {
-            File.mkdirSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name, "0777");
+        if (!File.existsSync(Config.getPackagePath() + _lib.name)) {
+            File.mkdirSync(Config.getPackagePath() + _lib.name, "0777");
         }
         try {
-            FileExtra.copySync(NodeJS.dirname+'/../'+_config.libsPath + _lib.name, _config.packagesPath + _lib.name);
-            if (File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name + '/package.json')) {
-                FileExtra.removeSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name + '/package.json');
+            FileExtra.copySync(Config.getLibsPath() + _lib.name, Config.getPackagePath() + _lib.name);
+            if (File.existsSync(Config.getPackagePath() + _lib.name + '/package.json')) {
+                FileExtra.removeSync(Config.getPackagePath() + _lib.name + '/package.json');
             }
-            if (File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name + '/.git')) {
-                FileExtra.removeSync(NodeJS.dirname+'/../'+_config.packagesPath + _lib.name + '/.git');
+            if (File.existsSync(Config.getPackagePath() + _lib.name + '/.git')) {
+                FileExtra.removeSync(Config.getPackagePath() + _lib.name + '/.git');
             }
             Console.info("package complete");
             executeNextStep();
@@ -161,12 +161,12 @@ class BuildLibCommand {
 
     private function getLibSource():Void {
         Console.info("retrieving source for : " + _lib.name);
-        if (File.existsSync(NodeJS.dirname+'/../'+_config.libsPath + _lib.name)) {
+        if (File.existsSync(Config.getLibsPath() + _lib.name)) {
             Console.info("updating...");
-            ChildProcessTool.exec("git pull " + _lib.git, {cwd:NodeJS.dirname+'/../'+_config.libsPath + _lib.name}, getLibSourceHandler);
+            ChildProcessTool.exec("git pull " + _lib.git, {cwd:Config.getLibsPath() + _lib.name}, getLibSourceHandler);
         } else {
             Console.info("cloning...");
-            ChildProcessTool.exec("git clone " + _lib.git + " " + NodeJS.dirname+'/../'+_config.libsPath + _lib.name, getLibSourceHandler);
+            ChildProcessTool.exec("git clone " + _lib.git + " " + Config.getLibsPath() + _lib.name, getLibSourceHandler);
         }
     }
 

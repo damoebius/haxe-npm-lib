@@ -52,8 +52,8 @@ class HaxelibCli {
     private function build():Void {
         Console.info("start building libs");
         try{
-        if (File.existsSync(NodeJS.dirname+'/../'+_config.packagesPath)) {
-            FileExtra.removeSync(NodeJS.dirname+'/../'+_config.packagesPath);
+        if (File.existsSync(Config.getPackagePath())) {
+            FileExtra.removeSync(Config.getPackagePath());
         }
         } catch (e:Error){
             Console.error("error while removing packages");

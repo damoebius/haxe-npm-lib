@@ -23,4 +23,12 @@ class Config {
         }
         return _instance;
     }
+
+    public static function getPackagePath():String{
+        return NodeJS.dirname+'/../'+getInstance().packagesPath;
+    }
+
+    public static function getLibsPath():String{
+        return NodeJS.dirname+'/../'+getInstance().libsPath;
+    }
 }
