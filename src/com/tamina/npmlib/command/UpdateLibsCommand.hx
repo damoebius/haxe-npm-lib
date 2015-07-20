@@ -23,7 +23,7 @@ class UpdateLibsCommand {
 
     private function getConfigHandler(response:ServerResponse):Void {
         if (response.statusCode == 200) {
-            var file = File.createWriteStream(NodeJS.dirname + '/../config.json');
+            var file = File.createWriteStream(Config.getConfigPath());
             var r:Readable = cast response;
             r.pipe(file);
             Console.info("LIBS UP TO DATE");

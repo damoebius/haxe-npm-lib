@@ -16,6 +16,15 @@
 		</exec>
 	</target>
 
+    <target name="compile-server">
+        <mkdir dir="${output.server}"/>
+
+        <exec executable="node" dir="${basedir}" failonerror="true">
+            <arg line="node_modules/haxe/bin/haxe-cli.js"/>
+            <arg line="-cp src -php ${output.server} -main HaxelibServer -dce full"/>
+        </exec>
+    </target>
+
 
 	<target name="copy-static-resources">
 		<copy todir="${output}">
@@ -23,9 +32,14 @@
 				<include name="**/*"/>
 			</fileset>
 		</copy>
+        <copy todir="${output.server}">
+            <fileset dir="assets">
+                <include name="config.json"/>
+            </fileset>
+        </copy>
 	</target>
 
-	<target name="build" depends="copy-static-resources, compile-cli"/>
+	<target name="build" depends="copy-static-resources, compile-cli, compile-server"/>
 
 
 </project>

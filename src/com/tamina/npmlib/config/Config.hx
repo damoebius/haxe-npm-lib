@@ -28,6 +28,10 @@ class Config {
         return NodeJS.dirname+'/../'+getInstance().packagesPath;
     }
 
+    public static function getConfigPath():String{
+        return NodeJS.dirname+'/../config.json';
+    }
+
     public static function getLibsPath():String{
         return NodeJS.dirname+'/../'+getInstance().libsPath;
     }
