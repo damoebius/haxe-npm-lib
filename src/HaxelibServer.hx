@@ -1,26 +1,30 @@
 package ;
+import php.Lib;
+import com.tamina.server.controler.LibController;
+import com.tamina.server.model.Route;
+import com.tamina.server.web.Page;
 import com.tamina.server.web.Action;
-import com.tamina.server.web.GetParamName;
 import php.Web;
 class HaxelibServer {
 
     private static var _instance:HaxelibServer;
 
-    private var _params:Map<String,String>;
+    private var _route:Route;
 
     public function new() {
-        trace('server');
-        _params = Web.getParams();
+        _route = new Route( Web.getParams() );
+        if(_route.page != null && _route.action != null){
 
-        if(_params[GetParamName.ACTION] != null){
-            if(_params[GetParamName.ACTION] == Action.ADD_LIB){
-
+            if(_route.page == Page.LIB){
+                var libCtrl = new LibController(_route);
+                libCtrl.run();
             } else {
-                trace("unknow action");
+                Lib.print("unknow page");
+                Web.setReturnCode(400);
             }
         } else {
-            trace('no action');
-            Web.setReturnCode(500);
+            Lib.print('no action or page');
+            Web.setReturnCode(400);
         }
     }
 

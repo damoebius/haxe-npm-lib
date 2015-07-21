@@ -35,6 +35,7 @@
         <copy todir="${output.server}">
             <fileset dir="assets">
                 <include name="config.json"/>
+                <include name=".htaccess"/>
             </fileset>
         </copy>
 	</target>
