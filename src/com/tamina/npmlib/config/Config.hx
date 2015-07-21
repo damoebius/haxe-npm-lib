@@ -3,12 +3,12 @@ import nodejs.NodeJS;
 import com.tamina.npmlib.io.FileExtra;
 import com.tamina.npmlib.model.IHaxeLib;
 
-class Config {
+class Config implements IConfig {
 
     public var libsPath:String;
     public var packagesPath:String;
     public var version:String;
-    public var serverConfig:String;
+    public var serverName:String;
     public var libs:Array<IHaxeLib>;
 
     private static var _instance:Config;

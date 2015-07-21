@@ -2,7 +2,7 @@
   "libsPath": "libs/",
   "packagesPath": "packages/",
   "version": "0.0.9",
-  "serverConfig":"http://www.tamina-online.com/haxelib/config.json",
+  "serverName":"haxelib.tamina-online.com",
   "libs": [
     {
       "name": "taminahx",

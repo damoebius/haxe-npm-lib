@@ -1,4 +1,9 @@
 package com.tamina.npmlib.command;
+import nodejs.http.ServerResponse;
+import haxe.Json;
+import nodejs.http.HTTPClientRequest;
+import nodejs.http.HTTP;
+import com.tamina.npmlib.model.IHaxeLib;
 import nodejs.NodeJS;
 import msignal.Signal;
 import com.tamina.npmlib.io.FileExtra;
@@ -12,6 +17,7 @@ class AddLibCommand {
     public var error:Signal0;
 
     private var _config:Config;
+    private var _lib:IHaxeLib;
 
 
     public function new() {
@@ -31,12 +37,38 @@ class AddLibCommand {
         if (!isValid(result)) {
             this.error.dispatch();
         } else {
-            var a = new Lib(promptResult.name, promptResult.description, promptResult.author, promptResult.git);
-            Console.info("Creating lib  " + a.name + '...');
-            _config.libs.push(a);
+            _lib = new Lib(promptResult.name, promptResult.description, promptResult.author, promptResult.git);
+
+            var options:HTTPRequestOptions = cast {};
+            options.hostname = _config.serverName;
+            options.path = "/lib/add";
+            options.method = HTTPMethod.Post;
+
+            var req:HTTPClientRequest = HTTP.request(options, addLibToServerHandler);
+            req.write(Json.stringify(_lib));
+            req.end();
+
+            Console.info("Creating lib  " + _lib.name + '...');
+
+        }
+    }
+
+    private function onErrorHandler(error:String):Void {
+        Console.error(error);
+    }
+
+    private function addLibToServerHandler(response:ServerResponse):Void {
+
+        if (response.statusCode == 200) {
+            response.on('end', onErrorHandler);
+            _config.libs.push(_lib);
             FileExtra.writeJsonSync(NodeJS.dirname+'/../config.json', _config);
             this.complete.dispatch();
+            Console.info("Lib Reeady");
+        } else {
+            Console.error("Error : " + response.statusCode);
         }
+
     }
 
     private function isValid(promptResult:PromptResult):Bool {
