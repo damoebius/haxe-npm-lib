@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 (function (console) { "use strict";
 function $extend(from, fields) {
 	function Inherit() {} Inherit.prototype = from; var proto = new Inherit();
@@ -12,34 +11,43 @@ var HaxelibCli = function() {
 	(require('npm')).load();
 	var _g1 = 2;
 	var _g = this._process.argv.length;
-	while(_g1 < _g) {
-		var i = _g1++;
-		var arg = this._process.argv[i];
-		switch(arg) {
-		case "publish":
-			this.build();
-			break;
-		case "add":
-			this.add();
-			break;
-		case "help":
-			this.help();
-			break;
-		case "update":
-			this.update();
-			break;
-		default:
-			console.warn("Unknown argument : " + arg);
+	try {
+		while(_g1 < _g) {
+			var i = _g1++;
+			var arg = this._process.argv[i];
+			switch(arg) {
+			case "publish":
+				var lib = "";
+				if(i + 1 < this._process.argv.length) lib = this._process.argv[i + 1];
+				this.build(lib);
+				throw "__break__";
+				break;
+			case "add":
+				this.add();
+				throw "__break__";
+				break;
+			case "help":
+				this.help();
+				throw "__break__";
+				break;
+			case "update":
+				this.update();
+				throw "__break__";
+				break;
+			default:
+				console.warn("Unknown argument : " + arg);
+				throw "__break__";
+			}
 		}
-	}
+	} catch( e ) { if( e != "__break__" ) throw e; }
 };
 HaxelibCli.__name__ = true;
 HaxelibCli.main = function() {
 	HaxelibCli._instance = new HaxelibCli();
 };
 HaxelibCli.prototype = {
-	build: function() {
-		console.info("start building libs");
+	build: function(libname) {
+		if(libname == null) libname = "";
 		try {
 			if((require('fs')).existsSync(com_tamina_npmlib_config_Config.getPackagePath())) (require('fs-extra')).removeSync(com_tamina_npmlib_config_Config.getPackagePath());
 		} catch( e ) {
@@ -48,16 +56,26 @@ HaxelibCli.prototype = {
 				this._process.exit(0);
 			} else throw(e);
 		}
-		this._buildCompleteNumber = 0;
-		var _g1 = 0;
-		var _g = this._config.libs.length;
-		while(_g1 < _g) {
-			var i = _g1++;
-			var lib = this._config.libs[i];
-			var builder = new com_tamina_npmlib_command_BuildLibCommand(lib);
-			builder.error.add($bind(this,this.buildHandler));
-			builder.complete.add($bind(this,this.buildHandler));
-			builder.run();
+		if(libname == "") {
+			console.info("start building ALL libs");
+			this._buildCompleteNumber = 0;
+			var _g1 = 0;
+			var _g = this._config.libs.length;
+			while(_g1 < _g) {
+				var i = _g1++;
+				var lib = this._config.libs[i];
+				var builder = new com_tamina_npmlib_command_BuildLibCommand(lib);
+				builder.error.add($bind(this,this.buildHandler));
+				builder.complete.add($bind(this,this.buildHandler));
+				builder.run();
+			}
+		} else {
+			console.info("start building " + libname);
+			var lib1 = com_tamina_npmlib_config_Config.getLibByName(libname);
+			var builder1 = new com_tamina_npmlib_command_BuildLibCommand(lib1);
+			builder1.error.add($bind(this,this.singleBuildHandler));
+			builder1.complete.add($bind(this,this.singleBuildHandler));
+			builder1.run();
 		}
 	}
 	,add: function() {
@@ -72,6 +90,9 @@ HaxelibCli.prototype = {
 	,buildHandler: function(lib) {
 		this._buildCompleteNumber++;
 		if(this._buildCompleteNumber >= this._config.libs.length) this._process.exit(0);
+	}
+	,singleBuildHandler: function(lib) {
+		this._process.exit(0);
 	}
 	,help: function() {
 		var cmd = new com_tamina_npmlib_command_HelpCommand();
@@ -266,13 +287,13 @@ com_tamina_npmlib_command_BuildLibCommand.prototype = {
 	}
 	,getNpmVersionHandler: function(error,data) {
 		if(error != null) {
-			if(error.code == "E404") {
+			if(error.code == null || error.code == "E404") {
 				console.info("New package on NPM");
 				this._publish = true;
 				this._lib.npm.config = { };
 				this._lib.npm.config.build = this._lib.gitRevision;
 				this.executeNextStep();
-			} else console.error("Error while getting npm version" + Std.string(error));
+			} else console.error("Error while getting npm version : " + Std.string(error));
 		} else {
 			var fields = Reflect.fields(data);
 			if(fields.length > 0) {
@@ -422,6 +443,20 @@ com_tamina_npmlib_config_Config.getConfigPath = function() {
 };
 com_tamina_npmlib_config_Config.getLibsPath = function() {
 	return nodejs_NodeJS.get_dirname() + "/../" + com_tamina_npmlib_config_Config.getInstance().libsPath;
+};
+com_tamina_npmlib_config_Config.getLibByName = function(name) {
+	var result = null;
+	var _g1 = 0;
+	var _g = com_tamina_npmlib_config_Config._instance.libs.length;
+	while(_g1 < _g) {
+		var i = _g1++;
+		var lib = com_tamina_npmlib_config_Config._instance.libs[i];
+		if(lib.name == name) {
+			result = lib;
+			break;
+		}
+	}
+	return result;
 };
 com_tamina_npmlib_config_Config.prototype = {
 	__class__: com_tamina_npmlib_config_Config
