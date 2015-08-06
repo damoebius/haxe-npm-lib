@@ -2,6 +2,1062 @@
   "libsPath": "libs/",
   "packagesPath": "packages/",
   "version": "0.0.9",
-  "serverName":"haxelib.tamina-online.com",
-  "libs": []
+  "serverName": "haxelib.tamina-online.com",
+  "libs": [
+    {
+      "name": "taminahx",
+      "git": "https://github.com/damoebius/taminahx.git",
+      "npm": {
+        "name": "taminahx",
+        "description": "tamina library for haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "David Mouton",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/damoebius/taminahx.git"
+        }
+      }
+    },
+    {
+      "name": "beanhx",
+      "git": "https://github.com/jasononeil/beanhx.git",
+      "npm": {
+        "name": "beanhx",
+        "description": "Bean.js externs for Haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/beanhx.git"
+        }
+      }
+    },
+    {
+      "name": "CreateJS",
+      "git": "https://github.com/nickalie/CreateJS-Haxe.git",
+      "npm": {
+        "name": "hxcreatejs",
+        "description": "Externs for CreateJS libraries: EaselJS, TweenJS, SoundJS, PreloadJS.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Nikolay Glushchenko",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nickalie/CreateJS-Haxe.git"
+        }
+      }
+    },
+    {
+      "name": "ExtJs",
+      "git": "https://github.com/jasononeil/Ext-JS-4.0-externs-for-Haxe.git",
+      "npm": {
+        "name": "hxextjs",
+        "description": "Ext JS 4.0 Externs for haXe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/Ext-JS-4.0-externs-for-Haxe.git"
+        }
+      }
+    },
+    {
+      "name": "NodeJs",
+      "git": "https://github.com/HaxeFoundation/hxnodejs.git",
+      "npm": {
+        "name": "hxnodejs",
+        "description": "Extern type definitions for Node.JS version 0.12.0 and Haxe 3.2+.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Haxe Foundation",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/HaxeFoundation/hxnodejs.git"
+        }
+      }
+    },
+    {
+      "name": "phantomjs",
+      "git": "https://github.com/jdonaldson/phantomjs-hx.git",
+      "npm": {
+        "name": "hxphantomjs",
+        "description": "hxphantomjs is a haxe extern for phantomjs.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Justin Donaldson",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jdonaldson/phantomjs-hx.git"
+        }
+      }
+    },
+    {
+      "name": "hxphaser",
+      "git": "https://github.com/Blank101/haxe-phaser.git",
+      "npm": {
+        "name": "hxphaser",
+        "description": "Haxe externs for Phaser, the popular JavaScript game engine.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Sam",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/Blank101/haxe-phaser.git"
+        }
+      }
+    },
+    {
+      "name": "pixijs",
+      "git": "https://github.com/pixijs/pixi-haxe.git",
+      "npm": {
+        "name": "hxpixijs",
+        "description": "Externs of Pixi.js (v3) for Haxe - 2D webGL renderer with canvas fallback.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Adi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/pixijs/pixi-haxe.git"
+        }
+      }
+    },
+    {
+      "name": "three.js",
+      "git": "https://github.com/labe-me/haxe-three.js.git",
+      "npm": {
+        "name": "threejs-haxe",
+        "description": "Haxe externs for three.js",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Laurent Bédubourg",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/labe-me/haxe-three.js.git"
+        }
+      }
+    },
+    {
+      "name": "mithril",
+      "git": "https://github.com/ciscoheat/mithril-hx.git",
+      "npm": {
+        "name": "mithril-hx",
+        "description": "Mithril for Haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Andreas",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/ciscoheat/mithril-hx.git"
+        }
+      }
+    },
+    {
+      "name": "jQuery",
+      "git": "https://github.com/andyli/jQueryExternForHaxe.git",
+      "npm": {
+        "name": "jquery-hx",
+        "description": "jQuery extern for Haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Andy Li",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/andyli/jQueryExternForHaxe.git"
+        }
+      }
+    },
+    {
+      "name": "tjson",
+      "git": "https://github.com/martamius/TJSON.git",
+      "npm": {
+        "name": "tjson",
+        "description": "The tolerant JSON parser and encoder for HaXe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jordan Wambaugh",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/martamius/TJSON.git"
+        }
+      }
+    },
+    {
+      "name": "actuate",
+      "git": "https://github.com/openfl/actuate.git",
+      "npm": {
+        "name": "actuate",
+        "description": "Actuate is a fast and flexible tween library that uses a jQuery-style chaining syntax.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Joshua Granick",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/openfl/actuate.git"
+        }
+      }
+    },
+    {
+      "name": "spinehx",
+      "git": "https://github.com/nitrobin/spinehx.git",
+      "npm": {
+        "name": "spinehx",
+        "description": "SpineHx is Haxe 3 OpenFL/NME port of spine-libgdx skeletal animation runtime.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Eugene Veretennikov",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nitrobin/spinehx.git"
+        }
+      }
+    },
+    {
+      "name": "awe6",
+      "git": "https://github.com/hypersurge/awe6.git",
+      "npm": {
+        "name": "awe6",
+        "description": "awe6 is game inverted: a scalable, flexible and intuitive framework for the rapid development of quality games.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "hypersurge",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/hypersurge/awe6.git"
+        }
+      }
+    },
+    {
+      "name": "haxe-continuation",
+      "git": "https://github.com/Atry/haxe-continuation.git",
+      "npm": {
+        "name": "haxe-continuation",
+        "description": "Asynchronous programming in a natural multi-thread-like syntax, escaping from the callback hell.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Yang Bo",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/Atry/haxe-continuation.git"
+        }
+      }
+    },
+    {
+      "name": "howlerjs",
+      "git": "https://github.com/adireddy/haxe-howler.git",
+      "npm": {
+        "name": "hxhowlerjs",
+        "description": "Externs of howler.js for Haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Adi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/adireddy/haxe-howler.git"
+        }
+      }
+    },
+    {
+      "name": "detox",
+      "git": "https://github.com/jasononeil/detox.git",
+      "npm": {
+        "name": "hxdetox",
+        "description": "Detox - A cross-platform library, written in Haxe, that makes working with Xml and the DOM light weight and easy.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/detox.git"
+        }
+      }
+    },
+    {
+      "name": "tweenx",
+      "git": "https://github.com/shohei909/tweenx.git",
+      "npm": {
+        "name": "tweenx",
+        "description": "tween library for haxe",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "shohei909",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/shohei909/tweenx.git"
+        }
+      }
+    },
+    {
+      "name": "protohx",
+      "git": "https://github.com/nitrobin/protohx.git",
+      "npm": {
+        "name": "protohx",
+        "description": "Crossplatform implementation of 'Google's Protocol Buffers' for haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Eugene Veretennikov",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nitrobin/protohx.git"
+        }
+      }
+    },
+    {
+      "name": "hxevents",
+      "git": "https://github.com/ufront/hxevents.git",
+      "npm": {
+        "name": "hxevents",
+        "description": "simple cross-platform events system",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/ufront/hxevents.git"
+        }
+      }
+    },
+    {
+      "name": "json-stream",
+      "git": "https://github.com/qifun/json-stream.git",
+      "npm": {
+        "name": "json-stream-haxe",
+        "description": "JSON Stream is a efficient universal serialization framework for JSON and BSON.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "qifun",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/qifun/json-stream.git"
+        }
+      }
+    },
+    {
+      "name": "p2js",
+      "git": "https://github.com/adireddy/haxe-p2.git",
+      "npm": {
+        "name": "hxp2js",
+        "description": "Externs of p2.js for Haxe - A Javascript 2D physics library.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Adi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/adireddy/haxe-p2.git"
+        }
+      }
+    },
+    {
+      "name": "native3d",
+      "git": "https://github.com/matrix3d/native3d.git",
+      "npm": {
+        "name": "native3d",
+        "description": "A simple gpu accelerated graphics engine written in haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "lizhi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/matrix3d/native3d.git"
+        }
+      }
+    },
+    {
+      "name": "chrome-extension",
+      "git": "https://github.com/tong/chrome.extension.git",
+      "npm": {
+        "name": "chrome-extension-haxe",
+        "description": "Haxe/Javascript google chrome extension type definitions",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Tong",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/tong/chrome.extension.git"
+        }
+      }
+    },
+    {
+      "name": "pushstate",
+      "git": "https://github.com/jasononeil/hxpushstate.git",
+      "npm": {
+        "name": "pushstate-haxe",
+        "description": "PushState wrapper library for haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Jason O'Neil",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/jasononeil/hxpushstate.git"
+        }
+      }
+    },
+    {
+      "name": "yawf",
+      "git": "https://github.com/mikomize/yawf.git",
+      "npm": {
+        "name": "yawf",
+        "description": "Yet Another Web Framework : Some stuff for nodejs",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "miko",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/mikomize/yawf.git"
+        }
+      }
+    },
+    {
+      "name": "hxsignal",
+      "git": "https://github.com/zweimal/HxSignal.git",
+      "npm": {
+        "name": "hxsignal",
+        "description": "Simple Haxe Signal API implementation",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "German Allemand",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/zweimal/HxSignal.git"
+        }
+      }
+    },
+    {
+      "name": "haxe-starling",
+      "git": "https://github.com/peteshand/haxe-starling.git",
+      "npm": {
+        "name": "haxe-starling",
+        "description": "a Haxe port of the “Starling Framework“, the popular AS3 hardware accelerated 2D graphics library. ",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Pete Shand",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/peteshand/haxe-starling.git"
+        }
+      }
+    },
+    {
+      "name": "openfl-robotlegs-framework",
+      "git": "https://github.com/robotlegs/openfl-robotlegs-framework.git",
+      "npm": {
+        "name": "openfl-robotlegs-framework",
+        "description": "This is an OpenFL 2.x/Haxe port of the popular AS3 Micro-Architecture framework Robotlegs v2.2.1",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Robotlegs",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/robotlegs/openfl-robotlegs-framework.git"
+        }
+      }
+    },
+    {
+      "name": "angular.haxe",
+      "git": "https://github.com/frabbit/angular.haxe.git",
+      "npm": {
+        "name": "angular.haxe",
+        "description": "Toolset for integration of angular.js (https://angularjs.org) in haxe applications",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "frabbit",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/frabbit/angular.haxe.git"
+        }
+      }
+    },
+    {
+      "name": "Mage",
+      "git": "https://github.com/NobukazuHanada/Mage.git",
+      "npm": {
+        "name": "mage-haxe",
+        "description": "Frontend Library on Haxe, Haxe MVW Frontend Framework",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Nobkz",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/NobukazuHanada/Mage.git"
+        }
+      }
+    },
+    {
+      "name": "Golems",
+      "git": "https://github.com/Rezmason/Golems.git",
+      "npm": {
+        "name": "golems",
+        "description": "Golems is a simple cross-platform Haxe worker system. ",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Rezmason",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/Rezmason/Golems.git"
+        }
+      }
+    },
+    {
+      "name": "roxlib",
+      "git": "https://gitlab.com/wikiti-random-stuff/roxlib.git",
+      "npm": {
+        "name": "roxlib",
+        "description": "A multi-purpose haXe library.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Wikiti",
+        "version": "0.0.1",
+        "license": "MIT",
+        "engines": {
+          "node": ">=0.8.0"
+        },
+        "repository": {
+          "type": "git",
+          "url": "https://gitlab.com/wikiti-random-stuff/roxlib.git"
+        }
+      }
+    },
+    {
+      "name": "stats.js.hx",
+      "git": "https://github.com/luizbills/stats.js.hx.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "stats.js.hx",
+        "description": "Haxe extern for stats.js",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "luizbills",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/luizbills/stats.js.hx.git"
+        }
+      }
+    },
+    {
+      "name": "knockout.hx",
+      "git": "https://github.com/nulab/Knockout.hx.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "knockout.hx",
+        "description": "knockout.hx is an extern file for Knockout.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Nulab Inc",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/nulab/Knockout.hx.git"
+        }
+      }
+    },
+    {
+      "name": "hxdaedalus",
+      "git": "https://github.com/hxDaedalus/hxDaedalus.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "hxdaedalus",
+        "description": "This is a Haxe cross target version of the as3 Daedalus-lib",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Justinfront",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/hxDaedalus/hxDaedalus.git"
+        }
+      }
+    },
+    {
+      "name": "bootstrap.hx",
+      "git": "https://bitbucket.org/yar3333/haxe-bootstrap",
+      "gitRevision": "",
+      "npm": {
+        "name": "bootstrap.hx",
+        "description": "Twitter bootstrap with plugins.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "Yaroslav Sivakov",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://bitbucket.org/yar3333/haxe-bootstrap"
+        }
+      }
+    },
+    {
+      "name": "firebaseextern",
+      "git": "https://github.com/troysteinbauer/FirebaseExtern.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "FirebaseExtern",
+        "description": "Wrapper for creating strongly typed firebase objects in Haxe.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "troysteinbauer",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/troysteinbauer/FirebaseExtern.git"
+        }
+      }
+    },
+    {
+      "name": "cometdjs.hx",
+      "git": "https://github.com/adireddy/haxe-cometd.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "cometdjs.hx",
+        "description": "Externs of CometD for Haxe, a scalable comet (server push) implementation for the web.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "adireddy",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/adireddy/haxe-cometd.git"
+        }
+      }
+    },
+    {
+      "name": "slang.hx",
+      "git": "https://bitbucket.org/jacobalbano/slang3",
+      "gitRevision": "",
+      "npm": {
+        "name": "slang.hx",
+        "description": "An experimental stack-based scripting language.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "jacobalbano",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://bitbucket.org/jacobalbano/slang3"
+        }
+      }
+    },
+    {
+      "name": "mvcexpress",
+      "git": "https://github.com/flashjb/mvcExpress-haxe.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "mvcexpress",
+        "description": "Haxe Port of mvcexpress library",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "flashjb",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/flashjb/mvcExpress-haxe.git"
+        }
+      }
+    },
+    {
+      "name": "hxini",
+      "git": "https://gitlab.com/wikiti-random-stuff/hxini.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "hxini",
+        "description": "hxIni is a fast, light and simple library to read and write INI files, using hashes.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "wikiti",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://gitlab.com/wikiti-random-stuff/hxini.git"
+        }
+      }
+    },
+    {
+      "name": "milkcocoa-hx",
+      "git": "https://github.com/milk-cocoa/milkcocoa-hx.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "milkcocoa-hx",
+        "description": "This is milkcocoa client library!",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "nobkz",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/milk-cocoa/milkcocoa-hx.git"
+        }
+      }
+    },
+    {
+      "name": "dotshx",
+      "git": "https://github.com/fponticelli/dots.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "dotshx",
+        "description": "DOTS - Dom Tools",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "fponticelli",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/fponticelli/dots.git"
+        }
+      }
+    },
+    {
+      "name": "buzzhx",
+      "git": "https://github.com/adireddy/haxe-buzz.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "buzzhx",
+        "description": "Extern classes of Buzz for Haxe - A Javascript HTML5 Audio library.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "adi",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/adireddy/haxe-buzz.git"
+        }
+      }
+    },
+    {
+      "name": "hxcommonjs",
+      "git": "https://github.com/imcj/hxcommonjs.git",
+      "gitRevision": "",
+      "npm": {
+        "name": "hxcommonjs",
+        "description": "You can using hxcommmonjs export commonjs modules.",
+        "keywords": [
+          "javascript",
+          "library",
+          "haxe"
+        ],
+        "author": "imcj",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/imcj/hxcommonjs.git"
+        }
+      }
+    }
+  ]
 }

@@ -89,14 +89,14 @@ class BuildLibCommand {
 
     private function getNpmVersionHandler(error:NPMError, data:Dynamic):Void {
         if (error != null) {
-            if (error.code == "E404") {
+            if (error.code == null || error.code == "E404") {
                 Console.info('New package on NPM');
                 _publish = true;
                 _lib.npm.config = cast {};
                 _lib.npm.config.build = _lib.gitRevision;
                 executeNextStep();
             } else {
-                Console.error("Error while getting npm version" + error);
+                Console.error("Error while getting npm version : " + error);
             }
         } else {
             var fields = Reflect.fields(data);

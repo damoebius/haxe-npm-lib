@@ -35,4 +35,16 @@ class Config implements IConfig {
     public static function getLibsPath():String{
         return NodeJS.dirname+'/../'+getInstance().libsPath;
     }
+
+    public static function getLibByName(name:String):IHaxeLib{
+        var result:IHaxeLib = null;
+        for(i in 0..._instance.libs.length){
+            var lib = _instance.libs[i];
+            if(lib.name == name){
+                result = lib;
+                break;
+            }
+        }
+        return result;
+    }
 }

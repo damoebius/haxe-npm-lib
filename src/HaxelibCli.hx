@@ -30,17 +30,27 @@ class HaxelibCli {
 
         for (i in 2..._process.argv.length) {
             var arg = _process.argv[i];
+
             switch arg {
                 case ProcessArgument.BUILD:
-                    this.build();
+                    var lib = "";
+                    if ((i + 1) < _process.argv.length) {
+                        lib = _process.argv[i + 1];
+                    }
+                    this.build(lib);
+                    break;
                 case ProcessArgument.ADD:
                     this.add();
+                    break;
                 case ProcessArgument.HELP:
                     this.help();
+                    break;
                 case ProcessArgument.UPDATE:
                     this.update();
+                    break;
                 default:
                     Console.warn("Unknown argument : " + arg);
+                    break;
             }
         }
     }
@@ -49,22 +59,31 @@ class HaxelibCli {
         _instance = new HaxelibCli();
     }
 
-    private function build():Void {
-        Console.info("start building libs");
-        try{
-        if (File.existsSync(Config.getPackagePath())) {
-            FileExtra.removeSync(Config.getPackagePath());
-        }
-        } catch (e:Error){
+    private function build(libname:String = ""):Void {
+        try {
+            if (File.existsSync(Config.getPackagePath())) {
+                FileExtra.removeSync(Config.getPackagePath());
+            }
+        } catch (e:Error) {
             Console.error("error while removing packages");
             _process.exit(0);
         }
-        _buildCompleteNumber = 0;
-        for (i in 0..._config.libs.length) {
-            var lib = _config.libs[i];
+        if (libname == "") {
+            Console.info("start building ALL libs");
+            _buildCompleteNumber = 0;
+            for (i in 0..._config.libs.length) {
+                var lib = _config.libs[i];
+                var builder = new BuildLibCommand(lib);
+                builder.error.add(buildHandler);
+                builder.complete.add(buildHandler);
+                builder.run();
+            }
+        } else {
+            Console.info("start building " + libname);
+            var lib = Config.getLibByName(libname);
             var builder = new BuildLibCommand(lib);
-            builder.error.add(buildHandler);
-            builder.complete.add(buildHandler);
+            builder.error.add(singleBuildHandler);
+            builder.complete.add(singleBuildHandler);
             builder.run();
         }
     }
@@ -85,6 +104,10 @@ class HaxelibCli {
         if (_buildCompleteNumber >= _config.libs.length) {
             _process.exit(0);
         }
+    }
+
+    private function singleBuildHandler(lib:IHaxeLib):Void {
+        _process.exit(0);
     }
 
     private function help():Void {
